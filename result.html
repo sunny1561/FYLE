@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Result</title>
+</head>
+<body>
+    <h2>Your Overall Income will be</h2>
+    <div id="taxResult"></div>
+
+    <script>
+        // Get tax amount from URL parameter
+        var urlParams = new URLSearchParams(window.location.search);
+        var taxAmount = urlParams.get('taxAmount');
+
+        // Display tax amount
+        document.getElementById("taxResult").innerHTML = "Tax Amount: " + taxAmount;
+        document.getElementById("taxResult").innerHTML = "after tax deductions";
+    </script>
+</body>
+</html>
