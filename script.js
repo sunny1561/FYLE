@@ -2,12 +2,6 @@ $(document).ready(function() {
     // Hide error icons by default
     $(".error-icon").hide();
 
-    // Show description box when info icon is clicked
-    $(".info-icon").click(function() {
-        var description = $(this).attr("title");
-        $("#descriptionBox").text(description).show();
-    });
-
     // Validate number fields
     $("input[type='number']").on("input", function() {
         var inputId = $(this).attr("id");
@@ -37,7 +31,7 @@ $(document).ready(function() {
         var errors = false;
         $("input[type='number']").each(function() {
             var value = $(this).val();
-            if (isNaN(value)) {
+            if (isNaN(value) || value === "") {
                 errors = true;
                 $(this).siblings(".error-icon").show().attr("title", "Please enter a valid number");
             }
@@ -76,3 +70,4 @@ $(document).ready(function() {
         $("#modal").hide();
     });
 });
+
